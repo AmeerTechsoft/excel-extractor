@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "excel-extractor"
+version = "0.1.0"
+description = "Extract Excel formulas, validations, hyperlinks, notes, and rich cell metadata using xlwings or openpyxl. CLI and Python API."
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [
+	{ name = "Ameer Techsoft" }
+]
+keywords = ["excel", "xlwings", "openpyxl", "formulas", "metadata", "data validation", "hyperlinks", "notes"]
+classifiers = [
+	"Development Status :: 3 - Alpha",
+	"Environment :: Console",
+	"Intended Audience :: Developers",
+	"Programming Language :: Python",
+	"Programming Language :: Python :: 3",
+	"Programming Language :: Python :: 3 :: Only",
+	"Programming Language :: Python :: 3.8",
+	"Programming Language :: Python :: 3.9",
+	"Programming Language :: Python :: 3.10",
+	"Programming Language :: Python :: 3.11",
+	"Programming Language :: Python :: 3.12",
+	"Topic :: Office/Business",
+	"Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+	"xlwings>=0.30",
+	"openpyxl>=3.1.2"
+]
+license = "MIT"
+
+[project.urls]
+Homepage = "https://github.com/AmeerTechsoft/excel-extractor"
+Repository = "https://github.com/AmeerTechsoft/excel-extractor"
+Issues = "https://github.com/AmeerTechsoft/excel-extractor"
+
+[project.scripts]
+excel-extractor = "excel_extractor.cli:main"
+excel-extractor-convert = "excel_extractor.convert_excel_json:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["excel_extractor*"] 
